@@ -17,6 +17,10 @@ app.get('/thankyou2.html', (req, res) => {
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
-app.listen(port, () => {
-	console.log(`Example app listening at http://localhost:${port}`);
+app.listen(process.env.PORT || 3000, function () {
+	console.log(
+		'Express server listening on port %d in %s mode',
+		this.address().port,
+		app.settings.env
+	);
 });
