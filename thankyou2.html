@@ -27,21 +27,16 @@
     }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     const urlParams = new URLSearchParams(window.location.search);
     const fbid = urlParams.get('fbid');
+    console.log(fbid, 'FBID')
     fbq('init', fbid);
     // 	fbq('init', '863857361150309');
     fbq('track', "Lead");
+    console.log('LEAD START')
     fbq('track', 'Purchase', { currency: "EUR", value: 10.00 });
+    console.log('LEAD Purchase')
 
-    function getCookie(name) {
-      var nameEQ = name + "=";
-      var ca = document.cookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-      }
-      return null;
-    }
+
+
     window.close();</script>
 </body>
 
